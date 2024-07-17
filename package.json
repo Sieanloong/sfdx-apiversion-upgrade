@@ -1,9 +1,9 @@
 {
-  "name": "salesforce-apiversion-upgrade",
+  "name": "sfdx-apiversion-upgrade",
   "description": "Helps in upgrading salesforce api version for all metadata files",
   "version": "0.0.5",
   "author": "GanShankar",
-  "bugs": "https://github.com/Sieanloong/salesforce-apiversion-upgrade/issues",
+  "bugs": "https://github.com/Sieanloong/sfdx-apiversion-upgrade/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -38,7 +38,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/Sieanloong/salesforce-apiversion-upgrade",
+  "homepage": "https://github.com/Sieanloong/sfdx-apiversion-upgrade",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -58,7 +58,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "https://github.com/Sieanloong/salesforce-apiversion-upgrade",
+  "repository": "https://github.com/Sieanloong/sfdx-apiversion-upgrade",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
