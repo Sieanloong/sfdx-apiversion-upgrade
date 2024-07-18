@@ -1,7 +1,7 @@
 {
   "name": "sfdx-apiversion-upgrade",
   "description": "Helps in upgrading salesforce api version for all metadata files, up to 200.0 apiversion",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "sieanloong",
   "bugs": "https://github.com/Sieanloong/sfdx-apiversion-upgrade/issues",
   "dependencies": {
@@ -50,7 +50,7 @@
       "metadatautil": {
         "description": "Metadata utility tools"
       },
-      "metadatautil:set-api-version": {
+      "metadatautil:upgradeapiversion": {
         "description": "set metadata API version from origin version to target version."
       }
     },

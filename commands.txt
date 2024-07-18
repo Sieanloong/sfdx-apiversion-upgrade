@@ -32,6 +32,6 @@ sfdx plugins:link
 
 
 
-npm plugins:install salesforce-api-upgradeapiversion
+npm plugins:install sfdx-apiversion-upgrade
 
-sfdx metadatautil:
+sfdx metadatautil:upgradeapiversion
