@@ -50,7 +50,7 @@
       "metadatautil": {
         "description": "Metadata utility tools"
       },
-      "metadatautil:set-api-version": {
+      "metadatautil:upgradeapiversion": {
         "description": "set metadata API version from origin version to target version."
       }
     },

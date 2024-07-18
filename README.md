@@ -17,7 +17,7 @@ Install the plugin
 $ sfdx plugins:install sfdx-apiversion-upgrade
 
 To check whether the plugin is installed
-$ sfdx metadatautil:set-api-version
+$ sfdx metadatautil:upgradeapiversion
 
 To update the plugin to the latest version
 $ sfdx plugins:update
@@ -25,7 +25,7 @@ $ sfdx plugins:update
 
 ```
 USAGE:
-  $ sfdx metadatautil:set-api-version -m <array> -p <string> [-s <number>] [-t <number>] [-x <string>] [-d] [--json]
+  $ sfdx metadatautil:upgradeapiversion -m <array> -p <string> [-s <number>] [-t <number>] [-x <string>] [-d] [--json]
   [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS:
@@ -37,6 +37,6 @@ OPTIONS:
   -x, --fileprefix Metadata filename prefix. E.g. App for App_Utils.cls. Default: none(all files)
 
 EXAMPLES:
-sfdx metadatautil:set-api-version -m classes -s 40 -t 48 -p "{yourprojectsrc-path}\src"
-sfdx metadatautil:set-api-version -m classes/pages -s 40 -t 48 -p "{yourprojectsrc-path}\src" -x "App"
+sfdx metadatautil:upgradeapiversion -m classes -s 40 -t 48 -p "{yourprojectsrc-path}\src"
+sfdx metadatautil:upgradeapiversion -m classes/pages -s 40 -t 48 -p "{yourprojectsrc-path}\src" -x "App"
 ```
