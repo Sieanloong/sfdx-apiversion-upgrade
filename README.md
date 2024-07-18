@@ -21,7 +21,7 @@ Once that is in place, you can use the below to install this plugin!
 
 ```sh-session
 Install the plugin
-$ sfdx plugins:install salesforce-apiversion-upgrade
+$ sfdx plugins:install sfdx-apiversion-upgrade
 
 To check whether the plugin is installed
 $ sfdx metadatautil:upgradeapiversion
