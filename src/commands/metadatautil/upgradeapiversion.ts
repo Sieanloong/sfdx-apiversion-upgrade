@@ -7,7 +7,7 @@ import * as constants from "../../constants/constants";
 // Initialize Messages with the current plugin directory
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages(
-  "salesforce-apiversion-upgrade",
+  "sfdx-apiversion-upgrade",
   "messages"
 );
 
