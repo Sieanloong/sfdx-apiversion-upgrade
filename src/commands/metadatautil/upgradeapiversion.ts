@@ -29,7 +29,7 @@ export default class UpgradeAPIVersion extends SfdxCommand {
           console.log(
             "Metadata of type: " +
               val +
-              " is not supported. Possible values are: classes/triggers/pages/components/aura/lwc"
+              " is not supported. Possible values are: classes/triggers/pages/components/aura/lwc/flows"
           );
           process.exit();
         } else {
@@ -46,13 +46,13 @@ export default class UpgradeAPIVersion extends SfdxCommand {
       char: "s",
       description: messages.getMessage("sourceapi"),
       min: 10,
-      max: 99,
+      max: 199,
     }),
     targetversion: flags.number({
       char: "t",
       description: messages.getMessage("targetapi"),
-      min: 50,
-      max: 100,
+      min: 51,
+      max: 200,
     }),
     fileprefix: flags.string({
       char: "x",

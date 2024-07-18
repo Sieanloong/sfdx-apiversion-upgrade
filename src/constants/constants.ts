@@ -5,6 +5,7 @@ export const acceptedMetadata = [
   "triggers",
   "aura",
   "lwc",
+  "flows"
 ];
 
 export const DEFAULT_SOURCE_API_VERSION = 50;
