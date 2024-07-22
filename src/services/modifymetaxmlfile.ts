@@ -38,17 +38,28 @@ export class ModifyMetaXMLFile {
         selectedFiles.push(pathModule.join(path, "lwc", "**", fileName));
       }
       if (metadata[i] == "flows") {
-        selectedFiles.push(pathModule.join(path, "flows", "**", fileName));
+        selectedFiles.push(pathModule.join(path, "flows", fileName));
       }
     }
 
     // Set the Regex to match the max requested API version
-    //let regex = `<apiVersion>${sourceversion}.0</apiVersion>`;
-
+    const firstDg = sourceversion.toString()[0];
+    const secDg = sourceversion.toString()[1];
+    const thirdDg = sourceversion.toString()[2];
+    let regex;
+    if (thirdDg === undefined) {
+      regex = `<apiVersion>([0-${+firstDg - 1}][0-9]|[${firstDg}][0-${+secDg}]).0</apiVersion>`;
+    } else if (thirdDg !== undefined && firstDg === '1' && secDg !== '0') {
+      regex = `<apiVersion>([1][0-${+secDg - 1}][0-9]|[1][${secDg}][0-${thirdDg}]|[1-9][0-9]).0</apiVersion>`;
+    } else if (thirdDg !== undefined && firstDg === '1' && secDg === '0') {
+      regex = `<apiVersion>([1][0][0-${thirdDg}]|[1-9][0-9]).0</apiVersion>`;
+    } else {
+      regex = '<apiVersion>([1]?[0-9][0-9]).0</apiVersion>';
+    }
     // Constructing the options parameter to be passed to replace-in-file module
     let options = {
       files: selectedFiles,
-      from: new RegExp( `<apiVersion>${sourceversion}.0</apiVersion>`, "g"),
+      from: new RegExp(regex, "g"),
       to: `<apiVersion>${targetversion}.0</apiVersion>`,
       dry: dryrun,
     };
@@ -60,6 +71,7 @@ export class ModifyMetaXMLFile {
       const results = replace.sync(options);
       for (let i = 0; i < results.length; i++) {
         if (results[i].hasChanged == true) {
+          console.log( `#${i+1} file ${results[i].file} has been changed.`);
           numberOfFilesChanged += 1;
         }
       }
