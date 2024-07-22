@@ -30,7 +30,8 @@ USAGE:
 
 OPTIONS:
   -d, --dryrun If present will only output the files changed without actually changing them
-  -m, --metadata (required) Select metadata type. Possible values:  classes/pages/components/triggers/aura/lwc
+  -m, --metadata (required) Select metadata type.pick one or several of them, e.g: classes or classes/triggers; 
+    Possible values:  classes/pages/components/triggers/aura/lwc/flows
   -p, --path (required) The path to your src folder
   -s, --sourceversion The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 199, Default: 50
   -t, --targetversion The API version you want to upgrade to. Minimum:51 Maximum:200 Default:51
