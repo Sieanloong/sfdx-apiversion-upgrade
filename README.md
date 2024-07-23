@@ -15,12 +15,19 @@ Once that is in place, you can use the below to install this plugin!
 ```sh-session
 Install the plugin
 $ sfdx plugins:install sfdx-apiversion-upgrade
+$ sf plugins install sfdx-apiversion-upgrade
 
 To check whether the plugin is installed
 $ sfdx metadatautil:upgradeapiversion
+$ sf metadatautil upgradeapiversion
 
 To update the plugin to the latest version
 $ sfdx plugins:update
+$ sf plugins update
+
+To check the installed plugins list and version
+$ sfdx plugins
+$ sf plugins
 ```
 
 ```
@@ -33,11 +40,12 @@ OPTIONS:
   -m, --metadata (required) Select metadata type.pick one or several of them, e.g: classes or classes/triggers; 
     Possible values:  classes/pages/components/triggers/aura/lwc/flows
   -p, --path (required) The path to your src folder
-  -s, --sourceversion The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 199, Default: 50
-  -t, --targetversion The API version you want to upgrade to. Minimum:51 Maximum:200 Default:51
+  -s, --sourceversion The API version threshold from which you wish to upgrade. e.g. if input 45, means the vesion <=45.0 would be upgraged to the target version.  Minimum: 10, Maximum: 199, Default: 60(normally would use the latest version)
+  -t, --targetversion The API version you want to upgrade to. Minimum:51 Maximum:200 Default:61
   -x, --fileprefix Metadata filename prefix. E.g. App for App_Utils.cls. Default: none(all files)
 
 EXAMPLES:
-sfdx metadatautil:upgradeapiversion -m classes -s 40 -t 48 -p "{yourprojectsrc-path}\src"
+sfdx metadatautil:upgradeapiversion -m [classes|classes/pages/triggers] -s 40 -t 48 -p "{yourprojectsrc-path}\src"
 sfdx metadatautil:upgradeapiversion -m classes/pages -s 40 -t 48 -p "{yourprojectsrc-path}\src" -x "App"
+sf metadatautil upgradeapiversion -m [classes|classes/pages] -s 60 -t 61 -p "src"
 ```
